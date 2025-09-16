@@ -1,0 +1,241 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+/* Overall Section Styles */
+.supplyfabrx-section {
+  width: 100%;
+  padding: 65px 20px 60px; /* Top padding adjusted to clear navbar */
+  background-color: white;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  animation: fadeIn 1s ease;
+}
+
+.supplyfabrx-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Hero Header Styles */
+.SupplyFabriX-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 40px;
+  padding-top: 70px; /* For navbar */
+  background-color: #D0EDC6;
+  border-radius: 10px 10px 200px 10px;
+  scroll-margin-top: 100px;
+  flex-wrap: nowrap;
+}
+
+/* Image on Left */
+.SupplyFabriX-bg {
+  width: 50%;
+  max-width: 500px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.SupplyFabriX-bg:hover {
+  transform: scale(1.05);
+}
+
+/* Text Content on Right */
+.SupplyFabriX-content {
+  width: 50%;
+  max-width: 600px;
+  padding-left: 20px;
+}
+
+.SupplyFabriX-content h2 {
+  font-size: 39px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  color:#2c7a2c;
+}
+
+.SupplyFabriX-content h3 {
+  font-weight: 300;
+  font-size: 1.5rem; /* optional: adjust size as needed */
+  margin-bottom: 1rem; /* optional spacing */
+}
+
+.SupplyFabriX-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* Section Content Layout */
+.supplyfabrx-section-content {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 50px;
+}
+
+/* Left Column: Section Label */
+.supply-label {
+  width: 20%;
+  text-align: left;
+}
+
+.supply-label h3 {
+  font-size: 28px;
+  font-weight: 300;
+  color: #333;
+  margin: 0;
+}
+
+/* Spacer Column */
+.empty-div {
+  width: 5%;
+}
+
+/* Right Column: Section Items */
+.section-items {
+  width: 75%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* Card Wrapper */
+.section-items > div {
+  position: relative;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: left;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover Lift */
+.section-items > div:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Watermark on Hover */
+.section-items > div::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('../images/l.png') center center no-repeat;
+  background-size: 50% auto;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.section-items > div:hover::after {
+  opacity: 0.1;
+}
+
+/* Item Styles: Title and Body */
+.offering-title {
+  font-weight: 300;
+  margin-bottom: 8px;
+  font-size: 18px;
+  color: #0e0e0f;
+}
+
+.offering-body {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Call to Action Button */
+.supplyfabrx-button-container {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 1rem;
+}
+
+.supplyfabrx-button {
+  background-color: #2e7d32;
+  color: white;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  max-width: 300px;
+}
+
+.supplyfabrx-button:hover {
+  background-color: #1b5e20;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .SupplyFabriX-row {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px 60px;
+    padding-top: 35px;
+  }
+
+  .SupplyFabriX-bg,
+  .SupplyFabriX-content {
+    width: 100%;
+    padding: 0 15px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .SupplyFabriX-content h2 {
+    font-size: 22px;
+    margin-bottom: 16px;
+  }
+
+  .SupplyFabriX-content p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .supplyfabrx-section-content {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+  }
+
+  .supply-label,
+  .empty-div,
+  .section-items {
+    width: 100%;
+  }
+
+  .supply-label {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .section-items {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .section-items > div {
+    text-align: center;
+  }
+
+  .offering-title {
+    font-size: 16px;
+  }
+
+  .offering-body {
+    font-size: 14px;
+  }
+}

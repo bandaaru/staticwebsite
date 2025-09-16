@@ -1,0 +1,295 @@
+/* ========== GENERAL STYLES ========== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.about-us {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  max-width: 1330px;
+  margin-top: 10px;
+  padding: 20px;
+}
+
+/* ========== HERO SECTION ========== */
+.her-section {
+  background: none;
+  margin-top: 40px;
+  margin-bottom: 20px; /* Reduced bottom margin */
+  padding: 4px 0;
+  text-align: center;
+  color: #1c5839;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.her-section h1 {
+  font-size: 54px;
+  color: #1c5839;
+  margin-bottom: 1rem;
+  font-weight: 300;
+}
+
+/* ========== COMPANY OVERVIEW & JOURNEY SECTION ========== */
+.company-overview,
+.journey-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 20px auto; /* Reduced top and bottom margin */
+  padding: 20px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.overview-content,
+.journey-content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.overview-image,
+.journey-image {
+  width: 45%;
+  height: auto;
+}
+
+.text-content,
+.journey-text-content {
+  width: 50%;
+}
+
+.text-content h2,
+.journey-text-content h2 {
+  font-size: 2rem;
+  font-weight: 300;
+  color: #333;
+}
+
+.text-content p,
+.journey-text-content p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.text-content ul,
+.journey-text-content ul {
+  list-style: none;
+  padding: 0;
+  color: green;
+}
+
+.text-content li,
+.journey-text-content li {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+/* ========== VALUES SECTION ========== */
+.values-section {
+  background-color: #696969;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.values-section h2 {
+  font-size: 2rem;
+  font-family: "Open Sans", sans-serif;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.values-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+  padding: 30px;
+}
+
+.value-box {
+  background: transparent;
+  border: 2px solid white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 280px;
+  box-shadow: none;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.value-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 10px rgba(255, 255, 255, 0.2);
+}
+
+.value-icon {
+  font-size: 3.5rem;
+  color: rgb(67, 229, 67);
+  margin-bottom: 12px;
+}
+
+.value-box h3 {
+  font-size: 1.6rem;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.value-box p {
+  font-size: 1rem;
+  color: white;
+  line-height: 1.5;
+  max-width: 90%;
+}
+
+/* ========== LEADERSHIP SECTION ========== */
+.leadership {
+  text-align: center;
+  padding: 50px 0;
+  background-color: white;
+}
+
+.leaders-container {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  flex-wrap: wrap;
+}
+
+.leader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.leader-image {
+  width: 300px;
+  height: 410px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.leader-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #222;
+  margin: 5px 0;
+}
+
+.leader-designation {
+  font-size: 1.2rem;
+  color: #444;
+}
+
+/* ========== FOUNDER MESSAGE & FOOTER ========== */
+.founders-message {
+  text-align: center;
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.founders-message h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 15px;
+}
+
+.founders-message p {
+  font-size: 1.2rem;
+  color: #444;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* ========== MOBILE RESPONSIVE ========== */
+@media (max-width: 1024px) {
+  .hero-section h1 {
+    font-size: 2rem;
+    margin-right: 0;
+    padding: 0 10px;
+  }
+
+  .her-section {
+    margin-top: 40px;
+    margin-bottom: 20px; /* Also reduced for mobile */
+    height: auto;
+  }
+
+  .company-overview,
+  .journey-section {
+    flex-direction: column;
+    text-align: center;
+    margin: 20px auto;
+  }
+
+  .overview-content,
+  .journey-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .overview-image,
+  .journey-image {
+    order: 2;
+    width: 100%;
+  }
+
+  .text-content,
+  .journey-text-content {
+    order: 1;
+    width: 100%;
+  }
+
+  .text-content ul,
+  .journey-text-content ul {
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  .values-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .value-box {
+    width: 90%;
+    max-width: 350px;
+    text-align: center;
+  }
+
+  .leaders-container {
+    gap: 40px;
+  }
+
+  .leader-image {
+    width: 90%;
+    height: auto;
+  }
+
+  .founders-message {
+    padding: 10px;
+  }
+}

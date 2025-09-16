@@ -1,0 +1,255 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+/* General Section Styling */
+.tradefabrx-section {
+  width: 100%;
+  padding: 65px 20px 60px; /* Top padding adjusted to clear navbar */
+  background-color: white;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  animation: fadeIn 1s ease;
+}
+
+.tradefabrx-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Hero Section */
+.tradefabrx-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 40px;
+  padding-top: 70px; /* Prevent overlap with fixed navbar */
+  background-color: #D0EDC6;
+  border-radius: 10px 10px 200px 10px;
+  flex-direction: row;
+  scroll-margin-top: 100px;
+}
+
+.tradefabrx-img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.tradefabrx-img:hover {
+  transform: scale(1.05);
+}
+
+.tradefabrx-content {
+  width: 50%;
+  max-width: 600px;
+  padding-left: 20px;
+}
+
+.tradefabrx-content h2 {
+  font-size: 39px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  color:#2c7a2c;
+}
+
+.tradefabrx-content h3 {
+  font-weight: 300;
+  font-size: 1.5rem; /* optional: adjust size as needed */ 
+  margin-bottom: 1rem; /* optional spacing */
+}
+
+.tradefabrx-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* Section Content Layout */
+.tradefabrx-section-content {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 50px;
+}
+
+.tradefabrx-label {
+  width: 20%;
+  text-align: left;
+}
+
+.tradefabrx-label h3 {
+  font-size: 28px;
+  font-weight: 300;
+  color: #333;
+  margin: 0;
+}
+
+.empty-div {
+  width: 5%;
+}
+
+.tradefabrx-card-grid {
+  width: 75%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* Individual Card */
+.tradefabrx-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.tradefabrx-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Watermark on Hover */
+.tradefabrx-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url("../images/logo1.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 130px 130px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.tradefabrx-card:hover::before {
+  opacity: 0.12;
+  transform: scale(1.1);
+}
+
+/* Card Text */
+.tradefabrx-title-item {
+  font: size 21px;
+  font-weight: 500;
+  color: #2c7a2c;
+  margin-bottom: 10px;
+}
+
+.tradefabrx-body-item {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+/* Button Styling */
+.tradefabrx-button-container {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 1rem;
+}
+
+.tradefabrx-button {
+  background-color: #2e7d32;
+  color: white;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  max-width: 300px;
+}
+
+.tradefabrx-button:hover {
+  background-color: #1b5e20;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .tradefabrx-hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px 60px;
+    padding-top: 35px;
+  }
+
+  .tradefabrx-img {
+    order: -1;
+    width: 100%;
+    max-width: none;
+    margin-bottom: 20px;
+  }
+
+  .tradefabrx-content {
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  .tradefabrx-content h2 {
+    font-size: 22px;
+    margin-bottom: 16px;
+  }
+
+  .tradefabrx-content p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .tradefabrx-section-content {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+  }
+
+  .tradefabrx-label,
+  .empty-div,
+  .tradefabrx-card-grid {
+    width: 100%;
+  }
+
+  .tradefabrx-label {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .tradefabrx-card-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .tradefabrx-card {
+    text-align: center;
+  }
+
+  .tradefabrx-title-item {
+    font-size: 16px;
+  }
+
+  .tradefabrx-body-item {
+    font-size: 14px;
+  }
+
+  .tradefabrx-button {
+    font-size: 0.95rem;
+    padding: 0.75rem 1.25rem;
+  }
+}

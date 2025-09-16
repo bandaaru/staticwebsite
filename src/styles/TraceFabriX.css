@@ -1,0 +1,250 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* General Section Styling */
+.tracefabrx-section {
+  width: 100%;
+  padding: 65px 20px 60px;
+  background-color: #fff;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  animation: fadeIn 1s ease;
+}
+
+.tracefabrx-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Hero Section */
+.tracefabrx-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 40px;
+  padding-top: 70px;
+  background-color: #D0EDC6;
+  border-radius: 10px 10px 200px 10px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  scroll-margin-top: 100px;
+}
+
+.tracefabrx-bg {
+  width: 50%;
+  max-width: 500px;
+  border-radius: 10px;
+  transition: transform 0.4s ease;
+  flex-shrink: 0;
+}
+
+.tracefabrx-bg:hover {
+  transform: scale(1.05);
+}
+
+.tracefabrx-content {
+  width: 50%;
+  max-width: 600px;
+  padding-left: 20px;
+}
+
+.tracefabrx-content h2 {
+  font-size: 39px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  color: #2c7a2c;
+}
+
+.tracefabrx-content h3 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+.tracefabrx-content p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Section Content Layout */
+.tracefabrx-section-content {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 50px;
+  gap: 20px;
+}
+
+.trace-label {
+  flex: 0 0 20%;
+  text-align: left;
+}
+
+.trace-label h3 {
+  font-size: 1.75rem;
+  font-weight: 300;
+  color: #333;
+  margin: 0;
+}
+
+.section-items {
+  flex: 1 1 75%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* Card Styles */
+.section-items .card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: left;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.section-items .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+  font-size: 21px;
+  font-weight: 500;
+  color: #2c7a2c;
+  margin-bottom: 10px;
+}
+
+.card-body {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Call to Action Button */
+.tracefabrx-button-container {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 1rem;
+}
+
+.tracefabrx-button {
+  background-color: #2e7d32;
+  color: #fff;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  max-width: 300px;
+}
+
+.tracefabrx-button:hover {
+  background-color: #1b5e20;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .tracefabrx-row {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px 60px;
+    padding-top: 35px;
+  }
+
+  .tracefabrx-bg {
+    order: -1;
+    width: 100%;
+    max-width: none;
+    margin-bottom: 20px;
+    border-radius: 10px;
+  }
+
+  .tracefabrx-bg:hover {
+    transform: scale(1.05); /* Keeps hover scale on mobile/tablet */
+  }
+
+  .tracefabrx-content {
+    width: 100%;
+    padding: 0 15px;
+    text-align: center;
+  }
+
+  .tracefabrx-content h2 {
+    font-size: 22px;
+    margin-bottom: 16px;
+  }
+
+  .tracefabrx-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+  }
+
+  .tracefabrx-content p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #555;
+  }
+
+  .tracefabrx-section-content {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    gap: 20px;
+  }
+
+  .trace-label {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .trace-label h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  .section-items {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .section-items .card {
+    text-align: center;
+    padding: 20px;
+  }
+
+  .card-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: #2c7a2c;
+    margin-bottom: 10px;
+  }
+
+  .card-body {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+  }
+
+  .tracefabrx-button {
+    font-size: 0.95rem;
+    padding: 0.75rem 1.25rem;
+    width: 100%;
+    max-width: 250px;
+  }
+}
