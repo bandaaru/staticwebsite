@@ -1,128 +1,129 @@
+/* ===== Global Reset ===== */
 * {
   box-sizing: border-box;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-/* General Section Styling */
+/* ===== Section Wrapper ===== */
 .tradefabrx-section {
   width: 100%;
-  padding: 65px 20px 60px; /* Top padding adjusted to clear navbar */
-  background-color: white;
-  font-family: 'Arial', sans-serif;
-  text-align: center;
+  padding: 65px 20px 60px; /* Top padding adjusted for navbar */
+  background: linear-gradient(180deg, #ffffff 100%, #f9fff9 0%);
   animation: fadeIn 1s ease;
 }
 
+/* ===== Container ===== */
 .tradefabrx-container {
   max-width: 1200px;
   margin: auto;
 }
 
-/* Hero Section */
+/* ===== Hero Section ===== */
 .tradefabrx-hero {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 30px;
+  flex-wrap: wrap;
   padding: 40px;
-  padding-top: 70px; /* Prevent overlap with fixed navbar */
-  background-color: #D0EDC6;
-  border-radius: 10px 10px 200px 10px;
-  flex-direction: row;
-  scroll-margin-top: 100px;
+  margin-bottom: 50px;
+  background: linear-gradient(135deg, #e0f7fa, #e8f5e9);
+  border-radius: 0 0 80% 80% / 20% 20% 10% 10%;
+  overflow: hidden;
 }
 
+/* Decorative leaves */
+.tradefabrx-hero::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: -40px;
+  width: 120px;
+  height: 120px;
+  background: url('../images/leaf.png') no-repeat center/contain;
+  opacity: 0.4;
+}
+
+.tradefabrx-hero::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  right: -40px;
+  width: 100px;
+  height: 100px;
+  background: url('../images/leaf.png') no-repeat center/contain;
+  opacity: 0.4;
+}
+
+/* Hero Image */
 .tradefabrx-img {
+  max-width: 450px;
   width: 100%;
-  max-width: 500px;
-  border-radius: 10px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
-  flex-shrink: 0;
 }
 
 .tradefabrx-img:hover {
   transform: scale(1.05);
 }
 
+/* Hero Content */
 .tradefabrx-content {
-  width: 50%;
-  max-width: 600px;
-  padding-left: 20px;
+  flex: 1;
+  padding-left: 10px;
 }
 
 .tradefabrx-content h2 {
-  font-size: 39px;
-  font-weight: 400;
-  margin-bottom: 20px;
-  color:#2c7a2c;
+  font-size: 2.5rem;
+  color: #2e7d32;
+  margin-bottom: 1rem;
 }
 
 .tradefabrx-content h3 {
-  font-weight: 300;
-  font-size: 1.5rem; /* optional: adjust size as needed */ 
-  margin-bottom: 1rem; /* optional spacing */
+  font-size: 1.3rem;
+  color: #444;
+  margin-bottom: 1rem;
 }
 
 .tradefabrx-content p {
-  font-size: 16px;
+  font-size: 1rem;
+  color: #555;
   line-height: 1.6;
-  color: #444;
 }
 
-/* Section Content Layout */
-.tradefabrx-section-content {
-  display: flex;
-  align-items: flex-start;
-  margin-top: 50px;
-}
-
-.tradefabrx-label {
-  width: 20%;
-  text-align: left;
-}
-
+/* ===== Section Titles ===== */
 .tradefabrx-label h3 {
-  font-size: 28px;
-  font-weight: 300;
-  color: #333;
-  margin: 0;
+  font-size: 2rem;
+  color: #1b5e20;
+  margin-bottom: 2rem;
+  text-align: center; 
 }
 
-.empty-div {
-  width: 5%;
-}
-
+/* ===== Card Grid ===== */
 .tradefabrx-card-grid {
-  width: 75%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
 }
 
-/* Individual Card */
+/* ===== Individual Cards ===== */
 .tradefabrx-card {
-  background: #fff;
+  border-radius: 16px;
   padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
-  transition: transform 0.3s ease;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+  background: #fff;
 }
 
 .tradefabrx-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Watermark on Hover */
+/* Subtle watermark on hover */
 .tradefabrx-card::before {
   content: "";
   position: absolute;
@@ -133,123 +134,166 @@ body {
   background-image: url("../images/logo1.jpg");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 130px 130px;
+  background-size: 120px 120px;
   opacity: 0;
-  pointer-events: none;
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .tradefabrx-card:hover::before {
-  opacity: 0.12;
-  transform: scale(1.1);
+  opacity: 0.1;
+  transform: scale(1.05);
 }
 
-/* Card Text */
+/* Alternating card backgrounds */
+.tradefabrx-card:nth-child(odd) {
+  background: #f1f8e9; /* pastel green */
+}
+
+.tradefabrx-card:nth-child(even) {
+  background: #e8f5e9; /* lighter pastel green */
+}
+
 .tradefabrx-title-item {
-  font: size 21px;
-  font-weight: 500;
-  color: #2c7a2c;
+  color: #2e7d32;
+  font-size: 1.2rem;
   margin-bottom: 10px;
+  font-weight: 600;
 }
 
 .tradefabrx-body-item {
   font-size: 0.95rem;
-  color: #444;
+  color: #555;
   line-height: 1.5;
-  flex-grow: 1;
 }
 
-/* Button Styling */
+/* ===== CTA Button ===== */
 .tradefabrx-button-container {
-  display: flex;
-  justify-content: center;
-  margin: 2rem 1rem;
+  margin-top: 40px;
+  text-align: center;
 }
 
 .tradefabrx-button {
-  background-color: #2e7d32;
-  color: white;
-  padding: 0.75rem 2rem;
-  font-size: 1rem;
+  background: linear-gradient(90deg, #43a047, #66bb6a);
+  color: #fff;
   border: none;
-  border-radius: 8px;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  width: 100%;
+  transition: all 0.3s ease;
   max-width: 300px;
+  width: 100%;
 }
 
 .tradefabrx-button:hover {
-  background-color: #1b5e20;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsive Design */
+/* ===== Decorative Leaf Section ===== */
+.leaf-decor {
+  position: relative;
+  padding: 40px 0;
+}
+
+.leaf-decor::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -20px;
+  width: 60px;
+  height: 60px;
+  background: url('../images/leaf.png') no-repeat center/contain;
+  opacity: 0.5;
+}
+
+.leaf-decor::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 70px;
+  height: 70px;
+  background: url('../images/leaf.png') no-repeat center/contain;
+  opacity: 0.5;
+}
+
+/* ===== Responsive Breakpoints ===== */
+
+/* Tablets */
 @media (max-width: 1024px) {
+  .tradefabrx-content h2 {
+    font-size: 2.2rem;
+  }
+
+  .tradefabrx-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .tradefabrx-card-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+}
+
+/* Mobile Large */
+@media (max-width: 768px) {
   .tradefabrx-hero {
     flex-direction: column;
     text-align: center;
-    padding: 40px 20px 60px;
-    padding-top: 35px;
+    padding: 40px 20px;
   }
 
   .tradefabrx-img {
-    order: -1;
-    width: 100%;
-    max-width: none;
+    max-width: 100%;
     margin-bottom: 20px;
   }
 
   .tradefabrx-content {
-    width: 100%;
-    padding: 0 15px;
+    padding: 0;
   }
 
   .tradefabrx-content h2 {
-    font-size: 22px;
-    margin-bottom: 16px;
+    font-size: 1.8rem;
+  }
+
+  .tradefabrx-content h3 {
+    font-size: 1rem;
+  }
+
+  .tradefabrx-card-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Mobile Small */
+@media (max-width: 480px) {
+  .tradefabrx-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .tradefabrx-content h3 {
+    font-size: 0.9rem;
   }
 
   .tradefabrx-content p {
-    font-size: 14px;
-    line-height: 1.5;
-  }
-
-  .tradefabrx-section-content {
-    flex-direction: column;
-    align-items: center;
-    margin-top: 30px;
-  }
-
-  .tradefabrx-label,
-  .empty-div,
-  .tradefabrx-card-grid {
-    width: 100%;
-  }
-
-  .tradefabrx-label {
-    text-align: center;
-    margin-bottom: 20px;
+    font-size: 0.9rem;
   }
 
   .tradefabrx-card-grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-  }
-
-  .tradefabrx-card {
-    text-align: center;
+    grid-template-columns: 1fr;
   }
 
   .tradefabrx-title-item {
-    font-size: 16px;
+    font-size: 1rem;
   }
 
   .tradefabrx-body-item {
-    font-size: 14px;
+    font-size: 0.85rem;
   }
 
   .tradefabrx-button {
-    font-size: 0.95rem;
-    padding: 0.75rem 1.25rem;
+    width: 100%;
+    padding: 14px;
+    font-size: 1rem;
   }
 }

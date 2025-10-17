@@ -24,6 +24,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 
+
 // CSS imports
 import "./styles/HomePage.css";
 import "./styles/Navbar.css";

@@ -1,250 +1,282 @@
+/* ===== Global Reset ===== */
 * {
   box-sizing: border-box;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-/* General Section Styling */
+/* ===== Section Wrapper ===== */
 .tracefabrx-section {
   width: 100%;
   padding: 65px 20px 60px;
-  background-color: #fff;
-  font-family: 'Arial', sans-serif;
-  text-align: center;
+  background: linear-gradient(180deg, #ffffff 100%, #f9fff9 0%);
   animation: fadeIn 1s ease;
 }
 
+/* ===== Container ===== */
 .tracefabrx-container {
   max-width: 1200px;
   margin: auto;
 }
 
-/* Hero Section */
-.tracefabrx-row {
+/* ===== HERO SECTION ===== */
+.tracefabrx-hero {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
-  padding: 40px;
-  padding-top: 70px;
-  background-color: #D0EDC6;
-  border-radius: 10px 10px 200px 10px;
-  flex-direction: row;
+  gap: 30px;
   flex-wrap: wrap;
-  scroll-margin-top: 100px;
+  padding: 40px;
+  margin-bottom: 50px;
+  background: linear-gradient(135deg, #e0f7fa, #e8f5e9);
+  border-radius: 0 0 80% 80% / 20% 20% 10% 10%;
+  overflow: hidden;
 }
 
-.tracefabrx-bg {
-  width: 50%;
-  max-width: 500px;
-  border-radius: 10px;
-  transition: transform 0.4s ease;
-  flex-shrink: 0;
+/* Decorative leaves */
+.tracefabrx-hero::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: -40px;
+  width: 120px;
+  height: 120px;
+  background: url('../images/leaf.png') no-repeat center/contain;
+  opacity: 0.4;
 }
 
-.tracefabrx-bg:hover {
+.tracefabrx-hero::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  right: -40px;
+  width: 100px;
+  height: 100px;
+  background: url('../images/leaf.png') no-repeat center/contain;
+  opacity: 0.4;
+}
+
+/* Hero Image */
+.tracefabrx-img {
+  max-width: 450px;
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.tracefabrx-img:hover {
   transform: scale(1.05);
 }
 
+/* Hero Content */
 .tracefabrx-content {
-  width: 50%;
-  max-width: 600px;
-  padding-left: 20px;
+  flex: 1;
+  padding-left: 10px;
 }
 
 .tracefabrx-content h2 {
-  font-size: 39px;
-  font-weight: 400;
-  margin-bottom: 20px;
-  color: #2c7a2c;
+  font-size: 2.5rem;
+  color: #2e7d32;
+  margin-bottom: 1rem;
 }
 
 .tracefabrx-content h3 {
-  font-size: 1.5rem;
-  font-weight: 300;
+  font-size: 1.3rem;
   color: #444;
   margin-bottom: 1rem;
 }
 
 .tracefabrx-content p {
-  font-size: 16px;
+  font-size: 1rem;
   color: #555;
   line-height: 1.6;
 }
 
-/* Section Content Layout */
-.tracefabrx-section-content {
-  display: flex;
-  align-items: flex-start;
-  margin-top: 50px;
-  gap: 20px;
+/* ===== Section Titles ===== */
+.tracefabrx-label h3 {
+  font-size: 2rem;
+  color: #1b5e20;
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
-.trace-label {
-  flex: 0 0 20%;
-  text-align: left;
-}
-
-.trace-label h3 {
-  font-size: 1.75rem;
-  font-weight: 300;
-  color: #333;
-  margin: 0;
-}
-
-.section-items {
-  flex: 1 1 75%;
+/* ===== Card Grid ===== */
+.tracefabrx-card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
 }
 
-/* Card Styles */
-.section-items .card {
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+/* ===== Individual Cards ===== */
+.tracefabrx-card {
+  border-radius: 16px;
   padding: 20px;
-  text-align: left;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
 }
 
-.section-items .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+.tracefabrx-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
-.card-title {
-  font-size: 21px;
-  font-weight: 500;
-  color: #2c7a2c;
+/* Subtle watermark on hover */
+.tracefabrx-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url("../images/logo1.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 120px 120px;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.tracefabrx-card:hover::before {
+  opacity: 0.1;
+  transform: scale(1.05);
+}
+
+/* Alternating card backgrounds */
+.tracefabrx-card:nth-child(odd) {
+  background: #f1f8e9;
+}
+
+.tracefabrx-card:nth-child(even) {
+  background: #e8f5e9;
+}
+
+.tracefabrx-title-item {
+  color: #2e7d32;
+  font-size: 1.2rem;
   margin-bottom: 10px;
+  font-weight: 600;
 }
 
-.card-body {
-  font-size: 1rem;
-  color: #666;
+.tracefabrx-body-item {
+  font-size: 0.95rem;
+  color: #555;
   line-height: 1.5;
 }
 
-/* Call to Action Button */
+/* ===== CTA Button ===== */
 .tracefabrx-button-container {
-  display: flex;
-  justify-content: center;
-  margin: 2rem 1rem;
+  margin-top: 40px;
+  text-align: center;
 }
 
 .tracefabrx-button {
-  background-color: #2e7d32;
+  background: linear-gradient(90deg, #43a047, #66bb6a);
   color: #fff;
-  padding: 0.75rem 2rem;
-  font-size: 1rem;
   border: none;
-  border-radius: 8px;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  width: 100%;
+  transition: all 0.3s ease;
   max-width: 300px;
+  width: 100%;
 }
 
 .tracefabrx-button:hover {
-  background-color: #1b5e20;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsive Design */
+/* ===== Decorative Leaf Section ===== */
+.leaf-decor {
+  position: relative;
+  padding: 40px 0;
+}
+
+.leaf-decor::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -20px;
+  width: 60px;
+  height: 60px;
+  background: url('../images/leaf.png') no-repeat center/contain;
+  opacity: 0.5;
+}
+
+.leaf-decor::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 70px;
+  height: 70px;
+  background: url('../images/leaf.png') no-repeat center/contain;
+  opacity: 0.5;
+}
+
+/* ===== Responsive Breakpoints ===== */
 @media (max-width: 1024px) {
-  .tracefabrx-row {
-    flex-direction: column;
-    text-align: center;
-    padding: 40px 20px 60px;
-    padding-top: 35px;
-  }
-
-  .tracefabrx-bg {
-    order: -1;
-    width: 100%;
-    max-width: none;
-    margin-bottom: 20px;
-    border-radius: 10px;
-  }
-
-  .tracefabrx-bg:hover {
-    transform: scale(1.05); /* Keeps hover scale on mobile/tablet */
-  }
-
-  .tracefabrx-content {
-    width: 100%;
-    padding: 0 15px;
-    text-align: center;
-  }
-
   .tracefabrx-content h2 {
-    font-size: 22px;
-    margin-bottom: 16px;
+    font-size: 2.2rem;
   }
-
   .tracefabrx-content h3 {
-    font-size: 1.25rem;
-    margin-bottom: 12px;
+    font-size: 1.1rem;
   }
-
-  .tracefabrx-content p {
-    font-size: 14px;
-    line-height: 1.5;
-    color: #555;
+  .tracefabrx-card-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   }
+}
 
-  .tracefabrx-section-content {
+@media (max-width: 768px) {
+  .tracefabrx-hero {
     flex-direction: column;
-    align-items: center;
-    margin-top: 30px;
-    gap: 20px;
-  }
-
-  .trace-label {
-    width: 100%;
     text-align: center;
+    padding: 40px 20px;
+  }
+  .tracefabrx-img {
+    max-width: 100%;
     margin-bottom: 20px;
   }
-
-  .trace-label h3 {
-    font-size: 22px;
-    margin-bottom: 10px;
+  .tracefabrx-content {
+    padding: 0;
   }
-
-  .section-items {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+  .tracefabrx-content h2 {
+    font-size: 1.8rem;
   }
-
-  .section-items .card {
-    text-align: center;
-    padding: 20px;
+  .tracefabrx-content h3 {
+    font-size: 1rem;
   }
-
-  .card-title {
-    font-size: 16px;
-    font-weight: 500;
-    color: #2c7a2c;
-    margin-bottom: 10px;
+  .tracefabrx-card-grid {
+    grid-template-columns: 1fr 1fr;
   }
+}
 
-  .card-body {
-    font-size: 14px;
-    color: #666;
-    line-height: 1.5;
+@media (max-width: 480px) {
+  .tracefabrx-content h2 {
+    font-size: 1.5rem;
   }
-
+  .tracefabrx-content h3 {
+    font-size: 0.9rem;
+  }
+  .tracefabrx-content p {
+    font-size: 0.9rem;
+  }
+  .tracefabrx-card-grid {
+    grid-template-columns: 1fr;
+  }
+  .tracefabrx-title-item {
+    font-size: 1rem;
+  }
+  .tracefabrx-body-item {
+    font-size: 0.85rem;
+  }
   .tracefabrx-button {
-    font-size: 0.95rem;
-    padding: 0.75rem 1.25rem;
     width: 100%;
-    max-width: 250px;
+    padding: 14px;
+    font-size: 1rem;
   }
 }

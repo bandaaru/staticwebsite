@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/SupplyFabriX.css';
-import supplyImage from '../images/SupplyFabriX.jpg'; // adjust path if needed
+import supplyImage from '../images/SupplyFabriX.jpg';
 
 const offerings = [
   {
@@ -41,51 +41,49 @@ const SupplyFabriX = () => (
   <section className="supplyfabrx-section">
     <div className="supplyfabrx-container">
       
-      {/* HERO HEADER */}
-      <div className="SupplyFabriX-section">
-        <div className="SupplyFabriX-row">
-          <img src={supplyImage} alt="SupplyFabriX Logistics" className="SupplyFabriX-bg" />
-          <div className="SupplyFabriX-content">
-            <h2><strong>SupplyFabriX</strong></h2>
-            <h3>Advanced Logistics &amp; Market Intelligence</h3>
-            <p>
-              An advanced logistics and market intelligence platform that streamlines agricultural supply chains, reducing inefficiencies and post-harvest losses.
-            </p>
-          </div>
+      {/* HERO SECTION */}
+      <div className="supplyfabrx-hero">
+        <img src={supplyImage} alt="SupplyFabriX Logistics" className="supplyfabrx-img" />
+        <div className="supplyfabrx-content">
+          <h2><strong>SupplyFabriX</strong></h2>
+          <h3>Advanced Logistics &amp; Market Intelligence</h3>
+          <p>
+            An advanced logistics and market intelligence platform that streamlines agricultural supply chains, reducing inefficiencies and post-harvest losses.
+          </p>
         </div>
       </div>
 
-      {/* KEY OFFERINGS SECTION */}
-      <div className="supplyfabrx-section-content">
-        <div className="supply-label">
+      {/* KEY OFFERINGS */}
+      <div className="leaf-decor">
+        <div className="supplyfabrx-label">
           <h3>Key Offerings</h3>
         </div>
-        <div className="section-items">
+        <div className="supplyfabrx-card-grid">
           {offerings.map((item, idx) => (
-            <div className="card" key={idx}>
-              <h4 className="card-title">{item.title}</h4>
-              <p className="card-body">{item.body}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-      
-      {/* HOW IT HELPS SECTION */}
-      <div className="supplyfabrx-section-content">
-        <div className="supply-label">
-          <h3>How It Helps</h3>
-        </div>
-        <div className="section-items">
-          {benefits.map((item, idx) => (
-            <div className="card" key={idx}>
-              <h4 className="card-title">{item.title}</h4>
-              <p className="card-body">{item.body}</p>
+            <div className="supplyfabrx-card" key={idx}>
+              <div className="supplyfabrx-title-item">{item.title}</div>
+              <div className="supplyfabrx-body-item">{item.body}</div>
             </div>
           ))}
         </div>
       </div>
 
-      {/* CALL TO ACTION */}
+      {/* HOW IT HELPS */}
+      <div className="leaf-decor">
+        <div className="supplyfabrx-label">
+          <h3>How It Helps</h3>
+        </div>
+        <div className="supplyfabrx-card-grid">
+          {benefits.map((item, idx) => (
+            <div className="supplyfabrx-card" key={idx}>
+              <div className="supplyfabrx-title-item">{item.title}</div>
+              <div className="supplyfabrx-body-item">{item.body}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* CTA BUTTON */}
       <div className="supplyfabrx-button-container">
         <Link to="/OnboardingForm">
           <button className="supplyfabrx-button">
@@ -93,7 +91,7 @@ const SupplyFabriX = () => (
           </button>
         </Link>
       </div>
-      
+
     </div>
   </section>
 );

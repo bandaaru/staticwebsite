@@ -1,36 +1,28 @@
 /* ========== GENERAL STYLES ========== */
 * {
   box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
 
 .about-us {
-  font-family: Arial, sans-serif;
+  font-family: "Open Sans", Arial, sans-serif;
   line-height: 1.6;
   color: #333;
   max-width: 1330px;
-  margin-top: 10px;
+  margin: 0 auto;
   padding: 20px;
 }
 
 /* ========== HERO SECTION ========== */
 .her-section {
-  background: none;
-  margin-top: 40px;
-  margin-bottom: 20px; /* Reduced bottom margin */
-  padding: 4px 0;
+  margin: 40px 0 20px 0;
   text-align: center;
   color: #1c5839;
-  height: auto;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
 }
 
 .her-section h1 {
@@ -40,16 +32,16 @@ body {
   font-weight: 300;
 }
 
-/* ========== COMPANY OVERVIEW & JOURNEY SECTION ========== */
+/* ========== COMPANY OVERVIEW & MISSION ========== */
 .company-overview,
 .journey-section {
   display: flex;
   align-items: center;
   justify-content: space-between;
   max-width: 1200px;
-  margin: 20px auto; /* Reduced top and bottom margin */
+  margin: 20px auto;
   padding: 20px;
-  font-family: "Open Sans", sans-serif;
+  gap: 40px;
 }
 
 .overview-content,
@@ -57,12 +49,14 @@ body {
   display: flex;
   align-items: center;
   gap: 40px;
+  flex-wrap: wrap;
 }
 
 .overview-image,
 .journey-image {
   width: 45%;
-  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
 }
 
 .text-content,
@@ -74,7 +68,8 @@ body {
 .journey-text-content h2 {
   font-size: 2rem;
   font-weight: 300;
-  color: #333;
+  color: #222;
+  margin-bottom: 15px;
 }
 
 .text-content p,
@@ -87,84 +82,86 @@ body {
 .text-content ul,
 .journey-text-content ul {
   list-style: none;
-  padding: 0;
-  color: green;
+  padding-left: 0;
 }
 
 .text-content li,
 .journey-text-content li {
   font-size: 1rem;
   margin-bottom: 10px;
+  color: #1c5839;
+  position: relative;
+  padding-left: 25px;
+}
+
+.text-content li::before,
+.journey-text-content li::before {
+  content: "✔";
+  color: #1c5839;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 /* ========== VALUES SECTION ========== */
 .values-section {
   background-color: #696969;
-  padding: 50px 0;
+  padding: 50px 20px;
   text-align: center;
 }
 
 .values-section h2 {
   font-size: 2rem;
-  font-family: "Open Sans", sans-serif;
-  color: white;
-  margin-bottom: 20px;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 30px;
 }
 
 .values-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 25px;
   justify-content: center;
-  margin-top: 20px;
-  padding: 30px;
 }
 
 .value-box {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.05);
   border: 2px solid white;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
+  padding: 25px;
+  border-radius: 12px;
   width: 280px;
-  box-shadow: none;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  transition: all 0.3s ease;
   color: white;
+  text-align: center;
 }
 
 .value-box:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 10px rgba(255, 255, 255, 0.2);
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
 }
 
 .value-icon {
   font-size: 3.5rem;
-  color: rgb(67, 229, 67);
-  margin-bottom: 12px;
+  color: #43e543;
+  margin-bottom: 15px;
 }
 
 .value-box h3 {
   font-size: 1.6rem;
-  color: white;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .value-box p {
   font-size: 1rem;
-  color: white;
-  line-height: 1.5;
-  max-width: 90%;
+  line-height: 1.6;
 }
 
 /* ========== LEADERSHIP SECTION ========== */
 .leadership {
   text-align: center;
-  padding: 50px 0;
-  background-color: white;
+  padding: 50px 20px;
+  background-color: #fff;
 }
 
 .leaders-container {
@@ -184,6 +181,7 @@ body {
   width: 300px;
   height: 410px;
   object-fit: cover;
+  border-radius: 10px;
   margin-bottom: 15px;
 }
 
@@ -197,9 +195,23 @@ body {
 .leader-designation {
   font-size: 1.2rem;
   color: #444;
+  margin-bottom: 10px;
 }
 
-/* ========== FOUNDER MESSAGE & FOOTER ========== */
+/* LinkedIn Icon */
+.linkedin-icon {
+  font-size: 2rem;
+  color: #0077b5;
+  margin-top: 8px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.linkedin-icon:hover {
+  color: #005582;
+  transform: scale(1.15);
+}
+
+/* ========== FOUNDERS MESSAGE ========== */
 .founders-message {
   text-align: center;
   max-width: 800px;
@@ -219,27 +231,19 @@ body {
   color: #444;
   line-height: 1.6;
   font-style: italic;
+  margin-bottom: 20px;
 }
 
-/* ========== MOBILE RESPONSIVE ========== */
+/* ========== RESPONSIVE DESIGN ========== */
 @media (max-width: 1024px) {
-  .hero-section h1 {
-    font-size: 2rem;
-    margin-right: 0;
-    padding: 0 10px;
-  }
-
-  .her-section {
-    margin-top: 40px;
-    margin-bottom: 20px; /* Also reduced for mobile */
-    height: auto;
+  .her-section h1 {
+    font-size: 2.5rem;
   }
 
   .company-overview,
   .journey-section {
     flex-direction: column;
     text-align: center;
-    margin: 20px auto;
   }
 
   .overview-content,
@@ -250,13 +254,11 @@ body {
 
   .overview-image,
   .journey-image {
-    order: 2;
     width: 100%;
   }
 
   .text-content,
   .journey-text-content {
-    order: 1;
     width: 100%;
   }
 
@@ -269,15 +271,11 @@ body {
   .values-container {
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
   }
 
   .value-box {
     width: 90%;
     max-width: 350px;
-    text-align: center;
   }
 
   .leaders-container {

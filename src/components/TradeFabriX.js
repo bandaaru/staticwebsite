@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import "../styles/TradeFabriX.css";
 import tradeImage from "../images/TradeFabriX.jpg";
 
-
 const offerings = [
   {
     title: "Direct-to-Buyer Linkages",
@@ -48,13 +47,13 @@ const TradeFabriX = () => (
           <h2><strong>TradeFabriX</strong></h2>
           <h3>Market Linkages & Carbon Credit Monetization</h3>
           <p>
-            A game-changing revenue expansion platform that enables farmers, FPOs, and agri-enterprises to access premium markets, export opportunities, and carbon credit trading.
+            A game-changing revenue expansion platform that enables Farmers, FPOs, and Agri-enterprises to access premium markets, Export opportunities, and Carbon credit trading.
           </p>
         </div>
       </div>
 
       {/* KEY OFFERINGS */}
-      <div className="tradefabrx-section-content">
+      <div className="tradefabrx-section-content leaf-decor">
         <div className="tradefabrx-label">
           <h3>Key Offerings</h3>
         </div>
@@ -69,7 +68,7 @@ const TradeFabriX = () => (
       </div>
 
       {/* HOW IT HELPS */}
-      <div className="tradefabrx-section-content">
+      <div className="tradefabrx-section-content leaf-decor">
         <div className="tradefabrx-label">
           <h3>How It Helps</h3>
         </div>
